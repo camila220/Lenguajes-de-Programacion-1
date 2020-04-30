@@ -24,7 +24,7 @@ public class ejercicio0 {
     try {
        div= a/b;
     } catch (ArithmeticException e) {
-        System.out.print("no se puede dividir entre cero");
+        System.out.print("no se puede dividir entre 0);
     }
     return div;
     }
