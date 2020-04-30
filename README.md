@@ -43,15 +43,15 @@ A continuación, se presentará el listado de los requerimientos funcionales y l
 
 | ID Requerimiento | Descripción  | Prioridad |
 | :------------ |:---------------:| -----:|
-| `RF_1` | El sistema debe permitir un inicio de sesión con un usuario y contraseña ya establecido en el programa. Será conocido como super usuario.| Alta |
-| `RF_2` |El sistema debe permitir al super usuario crear otro usuario.|Alta|
-|`RF_3`|El sistema debe permitir al super usuario modificar otro usuario.|Alta|
-|`RF_4`|El sistema debe permitir al super usuario borrar otro usuario.|Alta|
-|`RF_5`|El sistema debe permitir que el super usuario otorgue o modifique los permisos a los otros usuarios.| Alta|
-|`RF_6`|El sistema debe permitir a cualquier usuario incluyendo el super usuario cerrar la sesión.|Alta|
-|`RF_7`|El sistema deberá permitir que un usuario anteriormente creado inicie sección.|Alta|
-|`RF_8`|El sistema deberá generar un cambio de contraseña cuando sea la primera vez que inicie sección.|Alta|
-|`RNF_1`|El sistema tendrá una interfaz gráfica desarrollada en JAVA|Alta|
-|`RNF_2`|El sistema tendrá portabilidad para diferentes computadores.|Alta|
-|`RNF_4`|El sistema almacenara los datos en la nube para su funcionamiento en los computadores que están instalados.|Alta|
-|`RNF_6`|El sistema tendrá concurrencia entre los usuarios.|Alta|
+| `RF_1` |El juego iniciara con un paneo en negro que ilustrala la imagen de la serie “Rick and Morty” con la seccion para introducir el usuario. | Alta |
+| `RF_2` |El juego iniciara con un paneo en negro que ilustrala la imagen de la serie “Rick and Morty” con la seccion para introducir el usuario.|Alta|
+|`RF_3`|En la trancicion del juego aparecera la nave del jugador por la pantalla, unicamente por el eje Y en la parte izquierda de la pantalla de manera recta sin interferencia en su recorrido.|Alta|
+|`RF_4`|El Usuario tendra solo un boton de Jugar al iniciar el juego en el menu principal del seguido del nombre de Usuario ( Ya resgistrado en la base de datos)|Alta|
+|`RF_5`|El Usuario o jugador podra ingresar unicamente si se encuantra registrado en la base de datos. Por el momento se encuantran los desarrolladores y el jugador que lo probara (luis) sin mayusculas ni numeros.| Alta|
+|`RF_6`|El juego permite ir acorde a la canción propuesta (MOCKUP).|Alta|
+|`RF_7`|La nave podrá moverse por el eje Y en la pantalla del jugador teniendo cuidado de no tocar los obstáculos que en este caso son los disparos de las naves enemigas|Alta|
+|`RF_8`|La Nave podrá dispararles a sus enemigos una clase de proyectil automáticamente sin necesidad de que el jugador tenga que accionarlo|Alta|
+|`RNF_1`|Las naves enemigas tendrán un proyectil al igual que la nave principal con la diferencia que sus disparos se harán automáticamente cada medio segundo, haciendo daño a la nave el jugador bajando su nivel de resistencia.|Alta|
+|`RNF_2`|La nave del jugador si es impactada por un proyectil de la nave enemiga 3 veces; esta generara un sonido de daño|Alta|
+|`RNF_4`|El juego acabara con la animación de la nave explotando en caso de que haya sido impactada 3 veces por un proyectil enemigo dando lugar a una imagen con un mensaje de perdida de la partida en la pantalla. |Alta|
+
