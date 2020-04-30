@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-*** GENERATED FROM project.xml - DO NOT EDIT  ***
-***         EDIT ../build.xml INSTEAD         ***
+<?xml version="1.0" 
 
 For the purpose of easier reading the script
 is divided into following sections:
@@ -1369,9 +1366,7 @@ is divided into following sections:
     </target>
     <target depends="init,compile-single,-debug-start-debugger,-debug-start-debuggee-applet" if="netbeans.home" name="debug-applet"/>
     <!--
-                ===============
-                CLEANUP SECTION
-                ===============
+     
             -->
     <target name="-deps-clean-init" unless="built-clean.properties">
         <property location="${build.dir}/built-clean.properties" name="built-clean.properties"/>
