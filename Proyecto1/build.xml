@@ -1,73 +1,849 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- You may freely edit this file. See commented blocks below for -->
-<!-- some examples of how to customize the build. -->
-<!-- (If you delete it and reopen the project it will be recreated.) -->
-<!-- By default, only the Clean and Build commands use this build script. -->
-<!-- Commands such as Run, Debug, and Test only use this build script if -->
-<!-- the Compile on Save feature is turned off for the project. -->
-<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
-<!-- in the project's Project Properties dialog box.-->
-<project name="Proyecto1" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Proyecto1.</description>
-    <import file="nbproject/build-impl.xml"/>
-    <!--
+package VISTA;
 
-    There exist several targets which are by default empty and which can be 
-    used for execution of your tasks. These targets are usually executed 
-    before and after some main targets. They are: 
+import edu.princeton.cs.introcs.*;
 
-      -pre-init:                 called before initialization of project properties
-      -post-init:                called after initialization of project properties
-      -pre-compile:              called before javac compilation
-      -post-compile:             called after javac compilation
-      -pre-compile-single:       called before javac compilation of single file
-      -post-compile-single:      called after javac compilation of single file
-      -pre-compile-test:         called before javac compilation of JUnit tests
-      -post-compile-test:        called after javac compilation of JUnit tests
-      -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile-test-single: called after javac compilation of single JUunit test
-      -pre-jar:                  called before JAR building
-      -post-jar:                 called after JAR building
-      -post-clean:               called after cleaning build products
+import sun.audio.*;
+import java.io.*;
 
-    (Targets beginning with '-' are not intended to be called on their own.)
+public class Juego {
+    
 
-    Example of inserting an obfuscator after compilation could look like this:
+    public double x = 0.15;
+    public double vx = 0.002;
+    public double y = 0.5;
+    public double vy = 0.005;
+    public double casx = 0.05;
+    public double casy = 0.95;
+    public double casx1 = 0.10;
+    public double casy1 = 0.95;
+    public double casx2 = 0.15;
+    public double casy2 = 0.95;
+    // MORTYS
+    public double a = 0.6;
+    public double b = 0.6;
+    public double a1 = 0.6;
+    public double b1 = 0.4;
 
-        <target name="-post-compile">
-            <obfuscate>
-                <fileset dir="${build.classes.dir}"/>
-            </obfuscate>
-        </target>
+    public double a3 = 0.6;
+    public double b3 = 0.2;
+    public double a4 = 0.5;
+    public double b4 = 0.4;
+    public double a5 = 0.5;
+    public double b5 = 0.6;
+    public double a6 = 0.5;
+    public double b6 = 0.2;
 
-    For list of available properties check the imported 
-    nbproject/build-impl.xml file. 
+    public double a8 = 0.7;
+    public double b8 = 0.4;
+    public double a9 = 0.7;
+    public double b9 = 0.2;
 
+    public double a11 = 0.7;
+    public double b11 = 0.6;
+    public double t = 0.02;
+    public double ty = 0.02;
+    public double vid = 3;
+    public double di = 1;
+    double vidt = 6;
+    public double die = 1;
+    public double tw = 0.12;
+    public double te = 0.15;
+    public double mn = 0.003;
+    public double pp = 0.003;
+    public double pp1 = 0.003;
+    public double pp2 = 0.003;
 
-    Another way to customize the build is by overriding existing main targets.
-    The targets of interest are: 
+    // Variable EVIL MORTY
+    public double c = 0.85;
+    public double v = 0.5;
+    public double cx = 0.001;
+    public double we = 0.005;
+    public double gu = 0.8;
+    public double guy = 0.95;
+    public double gu1 = 0.9;
+    public double guy1 = 0.95;
+    public double gu2 = 0.85;
+    public double guy2 = 0.95;
+    public double gu3 = 0.75;
+    public double guy3 = 0.95;
+    public double gu4 = 0.7;
+    public double guy4 = 0.95;
+    public double gu5 = 0.65;
+    public double guy5 = 0.95;
+    // bala
+    public double f = 0.20;
+    public double g = 0.55;
+    public double vf = 0.013;
+    public double vg = 0;
+    public double EBala = 0;
+    public double XB;
+    public double XY;
+    // laser MORTY
+    public double la = 0.6;
+    public double lay = 0.6;
+    public double la1 = 0.6;
+    public double lay1 = 0.4;
+    public double la2 = 0.6;
+    public double lay2 = 0.2;
+    public double la3 = 0.5;
+    public double lay3 = 0.4;
+    public double la4 = 0.5;
+    public double lay4 = 0.6;
+    public double la5 = 0.5;
+    public double lay5 = 0.2;
+    public double la6 = 0.7;
+    public double lay6 = 0.4;
+    public double la7 = 0.7;
+    public double lay7 = 0.2;
+    public double la8 = 0.7;
+    public double lay8 = 0.6;
+    public double lath = 0.85;
+    public double lathy = 0.5;
+    public double vn = -0.005;
+    public double vm = 0;
+    public double vtx = -0.009;
+    public double vty = 0;
+    public double Ilaser = 0;
+    public double tt = 0.15;
+    public double tt2 = 0.25;
+    public int estado;
+    public double ganar = 0;
+    public double ganary = 0;
+    public double by = 0.005;
+    public boolean kk = true;
+    public double tx = 0.2;
+    public double txy = 0.8;
+    // tama�o RICL Y MORTY
+    public double imt = 0.1;
+    public double imty = 0.15;
+    // Carne de can
+    public double kr = 0.25;
+    public double kry = 0.6;
 
-      -init-macrodef-javac:     defines macro for javac compilation
-      -init-macrodef-junit:     defines macro for junit execution
-      -init-macrodef-debug:     defines macro for class debugging
-      -init-macrodef-java:      defines macro for class execution
-      -do-jar:                  JAR building
-      run:                      execution of project 
-      -javadoc-build:           Javadoc generation
-      test-report:              JUnit report generation
+    public boolean mrt = false;
+    public boolean mrti = false;
+    public String sonido = "src\\AUDIO\\Fondo.wav";
+    public String sonido_dano = "src\\AUDIO\\Damage.wav";
+    public String sonido_perdio = "src\\AUDIO\\Fondo_pierde.wav";
+    public String sonido_explosion = "src\\AUDIO\\Explosion.wav";
+    public String sonido_damage_morty = "src\\AUDIO\\Morty_d.wav";
+     InputStream in;
+     InputStream p_m;
+    public void arranque() {
 
-    An example of overriding the target for project execution could look like this:
+        
+        
+       
+        try {
 
-        <target name="run" depends="Proyecto1-impl.jar">
-            <exec dir="bin" executable="launcher.exe">
-                <arg file="${dist.jar}"/>
-            </exec>
-        </target>
+            in = new FileInputStream(sonido);
+            AudioStream audio = new AudioStream(in);
+            AudioPlayer.player.start(audio);
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
+        // MUSICA Musica = new MUSICA();
+        // Musica.getClass(true);
 
-    Notice that the overridden target depends on the jar target and not only on 
-    the compile target as the regular run target does. Again, for a list of available 
-    properties which you can use, check the target you are overriding in the
-    nbproject/build-impl.xml file. 
+        StdDraw.enableDoubleBuffering();
+        // tama�o
+        StdDraw.setCanvasSize(1000, 650);
+        // StdAudio.play("Fondo.wav");
+        // VARIABLES RICK Y MORTY
 
-    -->
-</project>
+        // JUEGO RUCK Y MORTY
+        while (true) {
+
+            StdDraw.text(tx, txy, "Preciona espacio para iniciar");
+
+            // paredes
+            if (y >= 0.8) {// pared superior
+                vy = -vy;// voltear el componente y de la V
+                y = y + vy;// saacrlo de la pared
+            }
+            if (y <= 0.15) {// pared inferior
+                vy = -vy;// voltear el componente y de la V
+                y = y + vy;// saacrlo de la pared
+            } // mover RICK Y MORTY
+            else if (StdDraw.isKeyPressed(83)) {
+                vy = -0.010;
+
+            } else if (StdDraw.isKeyPressed(87)) {
+                vy = 0.009;
+            } else {
+                vx = vy = 0.0;
+            }
+
+            // vidas rick-morty principal
+            StdDraw.picture(0.10, 0.95, "RECURSOS/barra.png", 0.17, 0.11, 0);
+            StdDraw.picture(casx, casy, "RECURSOS/vidas_rick.png", 0.06, 0.11, 0);
+            StdDraw.picture(casx1, casy1, "RECURSOS/vidas_rick.png", 0.06, 0.11, 0);
+            StdDraw.picture(casx2, casy2, "RECURSOS/vidas_rick.png", 0.06, 0.11, 0);
+
+            // vidas de evil morty
+            StdDraw.picture(0.77, 0.95, "RECURSOS/barra.png", 0.32, 0.11, 0);
+           StdDraw.picture(gu1, guy1, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0);
+            StdDraw.picture(gu2, guy2, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0); 
+            StdDraw.picture(gu, guy, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0);
+           
+            StdDraw.picture(gu3, guy3, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0);
+            StdDraw.picture(gu4, guy4, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0);
+            StdDraw.picture(gu5, guy5, "RECURSOS/Pocket_Mortys.png", 0.06, 0.11, 0);
+
+            // naves
+            StdDraw.picture(a, b, "RECURSOS/cabeza_g.png", tw, te, 0);// 1
+            StdDraw.picture(a1, b1, "RECURSOS/enemi2_g.png", tw, te, 0);// 2
+
+            StdDraw.picture(a3, b3, "RECURSOS/enemi2_g.png", tw, te, 0);// 4
+            StdDraw.picture(a4, b4, "RECURSOS/cabeza_g.png", tw, te, 0);// 5
+            StdDraw.picture(a5, b5, "RECURSOS/enem_g.png", tw, te, 0);// 6
+            StdDraw.picture(a6, b6, "RECURSOS/cabeza_g.png", tw, te, 0);// 7
+
+            StdDraw.picture(a8, b8, "RECURSOS/cabeza_g.png", tw, te, 0);// 9
+            StdDraw.picture(a9, b9, "RECURSOS/enemi2_g.png", tw, te, 0);// 10
+
+            StdDraw.picture(a11, b11, "RECURSOS/enem_g.png", tw, te, 0);// 12
+
+            // Logica de la bala
+            StdDraw.picture(f, g, "RECURSOS/laser.png", 0.03, 0.03, 0);
+            if (EBala == 0) {
+                f = x;
+                g = y;
+            } else {
+                f = f + vf;
+                g = g + vg;
+            }
+            // Disparar
+            if (StdDraw.isKeyPressed(32)) {
+
+                EBala = 1;
+                tx = -0.1;
+            }
+
+            // disparo nave 1
+            StdDraw.picture(la, lay, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la = a;
+                lay = b;
+            } else {
+                la = la + vn;
+                lay = lay + vg;
+            }
+
+            if (StdDraw.isKeyPressed(32)) {
+
+                EBala = 1;
+            }
+            // nave 2
+            StdDraw.picture(la1, lay1, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la1 = a1;
+                lay1 = b1;
+            } else {
+                la1 = la1 + vn;
+                lay1 = lay1 + vg;
+            }
+            // Disparar
+            if (StdDraw.isKeyPressed(32)) {
+
+                EBala = 1;
+            }
+            // nave 3
+            StdDraw.picture(la2, lay2, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la2 = a3;
+                lay2 = b3;
+            } else {
+                la2 = la2 + vn;
+                lay2 = lay2 + vg;
+            }
+            // Disparar
+            if (StdDraw.isKeyPressed(32)) {
+
+                EBala = 1;
+            }
+            // nave 4
+            StdDraw.picture(la3, lay3, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la3 = a4;
+                lay3 = b4;
+            } else {
+                la3 = la3 + vn;
+                lay3 = lay3 + vg;
+            }
+            // nave 4
+            StdDraw.picture(la4, lay4, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la4 = a5;
+                lay4 = b5;
+            } else {
+                la4 = la4 + vn;
+                lay4 = lay4 + vg;
+            }
+            // Disparar
+            if (StdDraw.isKeyPressed(32)) {
+
+                EBala = 1;
+            } // nave 4
+            StdDraw.picture(la5, lay5, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la5 = a6;
+                lay5 = b6;
+            } else {
+                la5 = la5 + vn;
+                lay5 = lay5 + vg;
+            } // nave 4
+            StdDraw.picture(la6, lay6, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la6 = a8;
+                lay6 = b8;
+            } else {
+                la6 = la6 + vn;
+                lay6 = lay6 + vg;
+            } // nave 4
+            StdDraw.picture(la7, lay7, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la7 = a9;
+                lay7 = b9;
+            } else {
+                la7 = la7 + vn;
+                lay7 = lay7 + vg;
+            } // nave 4
+            StdDraw.picture(la8, lay8, "RECURSOS/navelaser.png", 0.02, 0.02, 0);
+            if (EBala == 0) {
+                la8 = a11;
+                lay8 = b11;
+            } else {
+                la8 = la8 + vn;
+                lay8 = lay8 + vg;
+            }
+            // nave 4
+            StdDraw.picture(lath, lathy, "RECURSOS/rick_disparo.png", 0.10, 0.12, 0);
+            if (EBala == 0) {
+                lath = c;
+                lathy = v;
+            } else {
+                lath = lath + vtx;
+                lathy = lathy + vty;
+            }
+            // Reiniciar Bala Naves
+            // PARED
+            if (la < 0.01) {
+
+                la = a;
+                lay = b;
+            }
+            if (la1 < 0.01) {
+
+                la1 = a1;
+                lay1 = b1;
+            }
+            if (la1 < 0.01) {
+
+                la1 = a1;
+                lay1 = b1;
+
+            }
+
+            if (la2 < 0.01) {
+
+                la2 = a3;
+                lay2 = b3;
+
+            }
+
+            if (la3 < 0.01) {
+
+                la3 = a4;
+                lay3 = b4;
+
+            }
+
+            if (la4 < 0.01) {
+
+                la4 = a5;
+                lay4 = b5;
+
+            }
+
+            if (la5 < 0.01) {
+
+                la5 = a6;
+                lay5 = b6;
+
+            }
+
+            if (la6 < 0.01) {
+
+                la6 = a8;
+                lay6 = b8;
+
+            }
+
+            if (la7 < 0.01) {
+
+                la7 = a9;
+                lay7 = b9;
+
+            }
+
+            if (la8 < 0.01) {
+
+                la8 = a11;
+                lay8 = b11;
+
+            }
+            if (lath < 0.01) {
+
+                lath = c;
+                lathy = v;
+
+            }
+            // laser entre naves
+            if (((la < a + tw / 2) && (la > a - tw / 2) && (lay < b + te / 2) && (lay > b - te / 2))) {
+
+                la = a;
+                lay = b;
+
+            }
+
+            // choque con rick y morty
+            if (((la < x + imt / 2) && (la > x - imt / 2) && (lay < y + imty / 2) && (lay > y - imty / 2))) {
+
+                la = a;
+                lay = b;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+
+            }
+            Revisar_Perdida();
+            if (((la1 < x + imt / 2) && (la1 > x - imt / 2) && (lay1 < y + imty / 2) && (lay1 > y - imty / 2))) {
+
+                la1 = a1;
+                lay1 = b1;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la2 < x + imt / 2) && (la2 > x - imt / 2) && (lay2 < y + imty / 2) && (lay2 > y - imty / 2))) {
+
+                la2 = a3;
+                lay2 = b3;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la3 < x + imt / 2) && (la3 > x - imt / 2) && (lay3 < y + imty / 2) && (lay3 > y - imty / 2))) {
+
+                la3 = a4;
+                lay3 = b4;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la4 < x + imt / 2) && (la4 > x - imt / 2) && (lay4 < y + imty / 2) && (lay4 > y - imty / 2))) {
+
+                la4 = a5;
+                lay4 = b5;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la5 < x + imt / 2) && (la5 > x - imt / 2) && (lay5 < y + imty / 2) && (lay5 > y - imty / 2))) {
+
+                la5 = a6;
+                lay5 = b6;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la6 < x + imt / 2) && (la6 > x - imt / 2) && (lay6 < y + imty / 2) && (lay6 > y - imty / 2))) {
+
+                la6 = a8;
+                lay6 = b8;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la7 < x + imt / 2) && (la7 > x - imt / 2) && (lay7 < y + imty / 2) && (lay7 > y - imty / 2))) {
+
+                la7 = a9;
+                lay7 = b9;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((la8 < x + imt / 2) && (la8 > x - imt / 2) && (lay8 < y + imty / 2) && (lay8 > y - imty / 2))) {
+
+                la8 = a11;
+                lay8 = b11;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+            }
+            Revisar_Perdida();
+            if (((lath < x + imt / 2) && (lath > x - imt / 2) && (lathy < y + imty / 2) && (lathy > y - imty / 2))) {
+
+                StdDraw.picture(x, y, "RECURSOS/nav_damage1.png", imt, imty, 0);
+
+                lath = c;
+                lathy = v;
+
+                f = -0.1;
+                g = -0.1;
+                RevisarVidas();
+
+            }
+            Revisar_Perdida();
+
+            // Reiniciar Bala Iron man
+            // PARED
+            if (f > 1) {
+
+                f = x;
+                g = y;
+
+            }
+            // KILL NAVES
+            if (((f < a + tw / 2) && (f > a - tw / 2) && (g < b + te / 2) && (g > b - te / 2))) {
+                MatarNaves(a, b,"RECURSOS/cabeza_d.png", tw, te, 0);
+                
+                f = x;
+                g = y;
+                a = -0.1;
+            }
+            if (((f < a1 + tw / 2) && (f > a1 - tw / 2) && (g < b1 + te / 2) && (g > b1 - te / 2))) {
+                MatarNaves(a1, b1,"RECURSOS/enemi2_g.png", tw, te, 0);
+                
+                f = x;
+                g = y;
+                a1 = -0.1;
+            }
+            if (((f < a3 + tw / 2) && (f > a3 - tw / 2) && (g < b3 + te / 2) && (g > b3 - te / 2))) {
+                MatarNaves(a3, b3,"RECURSOS/enemi2_g.png", tw, te, 0);
+               
+                f = x;
+                g = y;
+                a3 = -0.1;
+            }
+            if (((f < a4 + tw / 2) && (f > a4 - tw / 2) && (g < b4 + te / 2) && (g > b4 - te / 2))) {
+                MatarNaves(a4, b4,"RECURSOS/cabeza_d.png", tw, te, 0);
+                
+                f = x;
+                g = y;
+                a4 = -0.1;
+            }
+            if (((f < a5 + tw / 2) && (f > a5 - tw / 2) && (g < b5 + te / 2) && (g > b5 - te / 2))) {
+                MatarNaves(a5, b5,"RECURSOS/enem_d.png", tw, te, 0);
+                
+                f = x;
+                g = y;
+                a5 = -0.1;
+            }
+            if (((f < a6 + tw / 2) && (f > a6 - tw / 2) && (g < b6 + te / 2) && (g > b6 - te / 2))) {
+               MatarNaves(a6, b6,"RECURSOS/cabeza_d.png", tw, te, 0);
+               
+                f = x;
+                g = y;
+                a6 = -0.1;
+            }
+
+            if (((f < a8 + tw / 2) && (f > a8 - tw / 2) && (g < b8 + te / 2) && (g > b8 - te / 2))) {
+
+                MatarNaves(a8, b8,"RECURSOS/cabeza_d.png", tw, te, 0);
+               
+                f = x;
+                g = y;
+                a8 = -0.1;
+            }
+
+            if (((f < a9 + tw / 2) && (f > a9 - tw / 2) && (g < b9 + te / 2) && (g > b9 - te / 2))) {
+                MatarNaves(a9, b9,"RECURSOS/enemi2_g.png", tw, te, 0);
+                
+                f = x;
+                g = y;
+                a9 = -0.1;
+            }
+
+            if (((f < a11 + tw / 2) && (f > a11 - tw / 2) && (g < b11 + te / 2) && (g > b11 - te / 2))) {
+                MatarNaves(a11, b11,"RECURSOS/enem_d.png", tw, te, 0);
+                
+                
+                f = x;
+                g = y;
+                a11 = -0.1;
+            }
+
+            // THANOS
+            if (((f < c + tt / 2) && (f > c - tt / 2) && (g < v + tt2 / 2) && (g > v - tt2 / 2))) {
+                f = x;
+                g = y;
+                vidt--;
+                if (vidt == 5) {
+                    gu5 = -0.1;
+                    DamageMorty();
+                }
+                if (vidt == 4) {
+                    gu4 = -0.1;
+                    DamageMorty();
+                }
+                if (vidt == 3) {
+                    gu3 = -0.1;
+                    DamageMorty();
+                }
+                if (vidt == 2) {
+                    gu = -0.1;
+                    DamageMorty();
+                }
+                if (vidt == 1) {
+                    gu2 = -0.1;
+                    DamageMorty();
+                }
+                if (vidt == 0) {
+                    c = -0.1;
+                    gu1 = -0.1;
+                    mrt = true;
+
+                }
+            }
+            if (mrt == true) {
+                StdDraw.picture(0.5, 0.5, "RECURSOS/ganar.png", 1, 1);
+                x = -0.1;
+            }
+
+            // rick_morty_lanave
+            StdDraw.picture(c, v, "RECURSOS/Evil_morty.png", tt, tt2, 0);
+            // movimiento EVILMORTY
+
+            v = v + we;
+            if (v >= 0.8) {// pared superior
+                we = -we;// voltear el componente y de la V
+                v = v + we;// saacrlo de la pared
+            }
+            if (v <= 0.1) {// pared inferior
+                we = -we;// voltear el componente y de la V
+                v = v + we;// saacrlo de la pared
+            }
+
+            // Movimiento naves
+            // Nave 1 segunda fila
+            b = b + pp;
+            if (b >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b = b + pp;// saacrlo de la pared
+            }
+            if (b <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b = b + pp;// saacrlo de la pared
+            }
+            // NAVE 2 segunda fila
+            b1 = b1 + pp;
+            if (b1 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b1 = b1 + pp;// saacrlo de la pared
+            }
+            if (b1 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b1 = b1 + pp;// saacrlo de la pared
+            }
+
+            // NAVE 4 segunda fila
+            b3 = b3 + pp;
+            if (b >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b3 = b3 + pp;// saacrlo de la pared
+            }
+            if (b3 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b3 = b3 + pp;// saacrlo de la pared
+            }
+            // NAVE 5 primera fila
+            b4 = b4 + pp;
+            if (b4 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b4 = b4 + pp;// saacrlo de la pared
+            }
+            if (b4 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b4 = b4 + pp;// saacrlo de la pared
+            }
+            // NAVE 6 primera fila
+            b5 = b5 + pp;
+            if (b5 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b5 = b5 + pp;// saacrlo de la pared
+            }
+            if (b5 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b5 = b5 + pp;// saacrlo de la pared
+            }
+            // NAVE 7 primera fila
+            b6 = b6 + pp;
+            if (b6 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b6 = b6 + pp;// saacrlo de la pared
+            }
+            if (b6 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b6 = b6 + pp;// saacrlo de la pared
+            }
+
+            // NAVE 9 tercera fila
+            b8 = b8 + pp;
+            if (b8 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b8 = b8 + pp;// saacrlo de la pared
+            }
+            if (b8 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b8 = b8 + pp;// saacrlo de la pared
+            }
+            // NAVE 10 tercera fila
+            b9 = b9 + pp;
+            if (b9 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b9 = b9 + pp;// saacrlo de la pared
+            }
+            if (b9 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b9 = b9 + pp;// saacrlo de la pared
+            }
+
+            // NAVE 12 tercera fila
+            b11 = b11 + pp;
+            if (b11 >= 0.8) {// pared superior
+                pp = -pp;// voltear el componente y de la V
+                b11 = b11 + pp;// saacrlo de la pared
+            }
+            if (b11 <= 0.2) {// pared inferior
+                pp = -pp;// voltear el componente y de la V
+                b11 = b11 + pp;// saacrlo de la pared
+            }
+
+            // rick y morty
+            StdDraw.picture(x, y, "RECURSOS/rick_morty_g.png", imt, imty, 0);
+            StdDraw.show();
+            StdDraw.pause(16);
+
+            // Ecuacion movimiento de rick y morty
+            x = x + vx;
+            y = y + vy;
+            // fondo de galaxia
+            StdDraw.picture(0.5, 0.5, "RECURSOS/galaxia2.jpg", 1, 1, 0);
+
+           
+        }
+
+    }
+    public void MatarNaves(double x, double y ,String ubi,double a,double b, int c)
+    {
+         SonidoExplicion();
+        StdDraw.picture(x, y, ubi, a, b, c);
+        StdDraw.show();
+        StdDraw.pause(45);
+        StdDraw.picture(x, y, "RECURSOS/explocion.png", a, b, c);
+        StdDraw.show();
+        StdDraw.pause(45);
+    }
+    public void RevisarVidas() {
+       
+       
+        vid--;
+        if (vid == 2) {
+            casx = -0.1;
+            SonidoHerida();
+        }
+        if (vid == 1) {
+            casx1 = -0.1;
+            SonidoHerida();
+        }
+        if (vid == 0) {
+            x = -0.1;
+            casx2 = -0.1;
+            SonidoHerida();
+            mrti = true;
+
+        }
+    }
+    public void DamageMorty()
+    {
+        StdDraw.picture(c, v, "RECURSOS/gefe_d.png", tt, tt2, 0);
+        StdDraw.show();
+        StdDraw.pause(45);
+         try {
+            InputStream dan_m;
+            dan_m = new FileInputStream(sonido_damage_morty);
+            AudioStream audio_dm = new AudioStream(dan_m);
+            AudioPlayer.player.start(audio_dm);
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
+    }
+    public void SonidoExplicion()
+    {
+        try {
+            InputStream Exp;
+            Exp = new FileInputStream(sonido_explosion);
+            AudioStream audio_exp = new AudioStream(Exp);
+            AudioPlayer.player.start(audio_exp);
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
+    }
+    public void SonidoHerida()
+    {
+         try {
+            InputStream dan;
+            dan = new FileInputStream(sonido_dano);
+            AudioStream audio_dan = new AudioStream(dan);
+            AudioPlayer.player.start(audio_dan);
+        } catch (Exception e) {
+            System.out.println(e.getCause());
+        }
+        StdDraw.picture(x, y, "RECURSOS/rick_morty_d.png", imt, imty, 0);
+            StdDraw.show();
+            StdDraw.pause(100);
+    }
+
+    public void Revisar_Perdida() {
+        if (mrti == true) {
+            StdDraw.picture(0.5, 0.5, "RECURSOS/perder.png", 1, 1);
+            
+         
+           
+            
+            
+            c = -0.1;
+        }
+    }
+    
+
+    static void Juego(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
+    }
+
+    void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
+
+    }
+
+}
